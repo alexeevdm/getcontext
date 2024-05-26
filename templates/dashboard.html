@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block title %}GetContext - Dashboard{% endblock %}
+
+{% block content %}
+<div style="text-align: center; margin-top: 50px;" class="container">
+    <h2>Welcome, {{ current_user.username }}!</h2>
+    <p>This is your dashboard.</p>
+
+    <form action="/training" method="get">
+            <button type="submit">Training</button>
+    </form>
+    <br>
+    <form action="/my_collection" method="get">
+            <button type="submit">My Collection</button>
+    </form>
+    <br>
+    <form action="/logout" method="get">
+            <button type="submit">Logout</button>
+    </form>
+</div>
+{% endblock %}

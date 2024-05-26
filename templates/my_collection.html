@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block title %}GetContext - My Collection{% endblock %}
+
+{% block content %}
+<div class="container">
+    <form action="/my_collection__add_word" method="post" class="form-group">
+        <label for="new_word">Enter new word:</label>
+        <input type="text" id="new_word" name="new_word" required>
+        <br>
+        <button type="submit">Add Word</button>
+    </form>
+
+    {% if word_added %}
+        <div class="success-message">
+            <h3>New word <span style="background-color: yellow; padding: 4px; border-radius: 3px;">{{ word }}</span> has been added</h3>
+        </div>
+    {% endif %}
+
+<!--    <div>-->
+<!--        <input type="checkbox" id="id" name="presets" value="Oxford 3000">-->
+<!--        <label>Oxford 3000</label>-->
+<!--    </div>-->
+
+    <hr/>
+
+    <form action="/training" method="get">
+        <button type="submit">Training</button>
+    </form>
+    <br>
+    <form action="/logout" method="get">
+            <button type="submit">Logout</button>
+    </form>
+</div>
+{% endblock %}

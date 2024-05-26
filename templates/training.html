@@ -1,0 +1,69 @@
+{% extends "base.html" %}
+
+{% block title %}GetContext - Training{% endblock %}
+
+{% block content %}
+<div style="text-align: center; margin-top: 50px;" class="container">
+<!--    <h2>Word Example:</h2>-->
+    <div>{{ examples | safe }}</div>
+    {% if show_word %}
+    <span style="background-color: yellow;">{{ word }}</span>
+    {% endif %}
+    {% if show_definition %}
+    <span style="background-color: lightgray; color: black; font-size: 12px">{{ definition }}</span>
+    {% endif %}
+    {% if show_translation %}
+    <span style="background-color: aliceblue; color: black; font-size: 12px">{{ translation }}</span>
+    {% endif %}
+    {% if show_synonyms %}
+    <span style="background-color: lightgoldenrodyellow; color: #9a6a6a; font-size: 12px">{{ synonyms }}</span>
+    {% endif %}
+    <div class="button-group">
+    <br>
+        <form action="/training__update_examples" method="post">
+            <input type="hidden" name="word" value="{{ word }}">
+            <input type="hidden" name="word_id" value="{{ word_id }}">
+            <button type="submit">Update Examples</button>
+        </form>
+        <br>
+        <form action="/training__get_definition" method="post">
+            <input type="hidden" name="examples" value="{{ examples }}">
+            <input type="hidden" name="word" value="{{ word }}">
+            <input type="hidden" name="word_id" value="{{ word_id }}">
+            <button type="submit">Definition</button>
+        </form>
+        <br>
+        <form action="/training__get_translation" method="post">
+            <input type="hidden" name="examples" value="{{ examples }}">
+            <input type="hidden" name="word" value="{{ word }}">
+            <input type="hidden" name="word_id" value="{{ word_id }}">
+            <button type="submit">Translation</button>
+        </form>
+        <br>
+        <form action="/training__get_synonyms" method="post">
+            <input type="hidden" name="examples" value="{{ examples }}">
+            <input type="hidden" name="word" value="{{ word }}">
+            <input type="hidden" name="word_id" value="{{ word_id }}">
+            <button type="submit">Synonyms</button>
+        </form>
+        <br>
+        <form action="/training__remove_word/{{ word_id }}" method="post">
+            <button type="submit">Remove Word</button>
+        </form>
+    </div>
+    <hr/>
+    <form action="/training__next_word" method="post">
+        <button type="submit">Next Word</button>
+    </form>
+
+    <br>
+    <form action="/my_collection" method="get">
+        <button type="submit">My Collection</button>
+    </form>
+    <br>
+    <form action="/logout" method="get">
+            <button type="submit">Logout</button>
+    </form>
+
+</div>
+{% endblock %}

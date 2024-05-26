@@ -1,0 +1,106 @@
+.button-group {
+    /*display: flex;*/
+    justify-content: center; /* Center align items horizontally */
+    margin-bottom: 20px; /* Add spacing below the button group */
+}
+
+.button-group form {
+    margin-right: 10px; /* Add spacing between form elements */
+}
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    color: #333;
+    text-align: center;
+    margin-top: 50px;
+}
+
+.container {
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.highlight {
+    background-color: yellow;
+    font-style: italic;
+}
+
+label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+}
+
+input[type="text"] {
+    width: 300px;
+    padding: 10px;
+    font-size: 16px;
+    text-align: center;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+}
+
+input[type="password"] {
+    width: 300px;
+    padding: 10px;
+    font-size: 16px;
+    text-align: center;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+}
+
+input[type="email"] {
+    width: 300px;
+    padding: 10px;
+    font-size: 16px;
+    text-align: center;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.success-message {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #dff0d8;
+    border: 1px solid #c3e6cb;
+    border-radius: 5px;
+}
+
+button {
+    padding: 5px 20px; /* Adjust padding for desired button size */
+    font-size: 12px; /* Set font size for button text */
+    border: 2px solid #007bff; /* Add border with a color */
+    background-color: #007bff; /* Set background color of the button */
+    color: #fff; /* Set text color to white */
+    cursor: pointer; /* Change cursor to pointer on hover */
+    border-radius: 10px; /* Add rounded corners */
+    width: 170px; /* Set fixed width for buttons */
+    height: 30px; /* Set fixed height for buttons */
+}
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+}

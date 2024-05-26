@@ -1,0 +1,10 @@
+openai~=1.23.3
+flask~=3.0.3
+SQLAlchemy~=2.0.29
+python-dotenv~=1.0.1
+flask_sqlalchemy
+flask_bcrypt
+flask_login
+mysql-connector-python
+requests
+urllib3==1.26.7
