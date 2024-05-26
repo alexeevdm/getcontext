@@ -252,7 +252,9 @@ def my_collection__add_word():
     # Retrieve the new word from the form data
     new_word = request.form['new_word']
     # Create a new Message object and add it to the database
-    word = Word(word=new_word, user_id=current_user.id)
+    word = Word(word=new_word,
+                user_id=current_user.id,
+                examples=bot.get_5_examples(new_word))
     db.session.add(word)
     db.session.commit()
     return render_template('my_collection.html', word_added=True, word=new_word)
