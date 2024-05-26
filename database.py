@@ -43,17 +43,19 @@ class Word(db.Model):
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
     word = db.Column(db.String(100), nullable=False)
     user_id = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=False)
-    examples = db.Column(db.String(255), nullable=False)
+    examples = db.Column(db.Text, nullable=False)
 
-    created_at = db.Column(db.DateTime, default=db.func.current_timestamp())
+    added = db.Column(db.DateTime, default=db.func.current_timestamp())
     repeated = db.Column(db.Integer, default=0)         # X times repeated
-    repeat_initial_at = db.Column(db.DateTime)          # initial learning
-    repeat_first_review = db.Column(db.DateTime)        # day 1
-    repeat_second_review = db.Column(db.DateTime)       # day 3
-    repeat_third_review = db.Column(db.DateTime)        # day 7
-    repeat_fourth_review = db.Column(db.DateTime)       # day 14
-    repeat_fifth_review = db.Column(db.DateTime)        # day 30
-    repeat_subsequent = db.Column(db.DateTime)          # every 30 days
+
+    # repeat_initial = db.Column(db.DateTime)          # initial learning
+    # repeat_first_review = db.Column(db.DateTime)        # day 1
+    # repeat_second_review = db.Column(db.DateTime)       # day 3
+    # repeat_third_review = db.Column(db.DateTime)        # day 7
+    # repeat_fourth_review = db.Column(db.DateTime)       # day 14
+    # repeat_fifth_review = db.Column(db.DateTime)        # day 30
+    # repeat_subsequent = db.Column(db.DateTime)          # every 30 days
+
     # pronunciation
     # definition
     # synonyms
